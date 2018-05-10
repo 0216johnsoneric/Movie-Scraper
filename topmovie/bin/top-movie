@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/now_playing'
+
+TopMovies::CLI.new.call
