@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/now_playing'
+require_relative '../lib/topmovie'
 
-TopMovies::CLI.new.call
+TopMovie::CLI.new.call

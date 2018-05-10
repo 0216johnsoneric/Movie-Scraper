@@ -1,7 +1,7 @@
 require 'pry'
 
 
-class TopMovies::Movies
+class TopMovie::Movies
 
   attr_accessor :name, :score, :url, :top_movies, :cc, :score
 
