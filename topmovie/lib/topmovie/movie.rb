@@ -1,9 +1,10 @@
 require 'pry'
+require "bundler/setup"
 
 
-class TopMovie::Movies
+class Movie
 
-  attr_accessor :name, :score, :url, :top_movies, :cc, :score
+  attr_accessor :name, :score
 
   def self.today
     self.movie_info
@@ -15,7 +16,7 @@ class TopMovie::Movies
     puts "Todays Top Box Office Movies"
 
     movie_1 = self.new
-    movie_1.name = doc1.css()[0].text.strip
+    movie_1.name = doc.css()[0].text.strip
     movie_1.score = doc1.css()[0].text.strip
     movie_1.url = doc1.css()[0].text.strip.attr("")
 
@@ -34,7 +35,8 @@ class TopMovie::Movies
 
   def self.more_info
     top_movies = self.movie_info
-
+  end
+end
 
 
 
