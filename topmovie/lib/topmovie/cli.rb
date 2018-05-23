@@ -1,5 +1,5 @@
 require "pry"
-require "/lib/environment"
+require_relative "../environment"
 
 class CLI
   def call
