@@ -2,8 +2,8 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# Specify your gem's dependencies in topmovie.gemspec
+# Specify your gem's dependencies in superhero.gemspec
 gemspec
-require 'open-uri'
-require 'pry'
-require 'nokogiri'
+gem "nokogiri"
+gem "pry"
+gem "require_all"

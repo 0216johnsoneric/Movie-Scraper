@@ -1,8 +1,9 @@
 require "pry"
+require "/lib/environment"
 
 class CLI
   def call
-
+    binding.pry
     a = generate_info
     "would you like to see a list of the top movies?"
       if gets.strip == "yes"
@@ -15,7 +16,7 @@ class CLI
   def generate_info
     InfoGenerator.new
   end
-  
+
   def list
     puts "This weeks top 3 Movies:"
     puts " "
