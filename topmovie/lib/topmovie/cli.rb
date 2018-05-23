@@ -2,11 +2,20 @@ require "pry"
 
 class CLI
   def call
-    list_movies
+
+    a = generate_info
+    "would you like to see a list of the top movies?"
+      if gets.strip == "yes"
+        a.name_of_movies
+      end
+    names_of_movies
     options
     goodbye
   end
-
+  def generate_info
+    InfoGenerator.new
+  end
+  
   def list
     puts "This weeks top 3 Movies:"
     puts " "

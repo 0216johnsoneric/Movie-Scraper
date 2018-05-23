@@ -1,28 +1,30 @@
 class InfoGenerator
-  attr_accessor = :names_of_movies, :movie_scores
+  attr_accessor = :names_of_movies, :gross_revenue_of_movies, :weeks_in_boxoffice_of_movies
 
   def initialize
-    require 'pry'; binding.pry
-    doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/browse/in-theaters/"))
-    @names_of_movies = doc.css("magic selector")
+    doc = Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice/"))
+    @names_of_movies = displayable_movie_titles
+    @gross_revenue_of_movies = displayable_gross_revenue
+    @weeks_in_boxoffice_of_movies = displayable_weeks_in_boxoffice
   end
-end
 
-PATH = "http://superheroes.wikia.com/wiki"
-PARAMS = { marvel: "/List_of_Marvel_Characters", dc: "/List_of_DC_Characters"}
-def initialize(name)
-    @name = name.downcase.titleize!
-    @studio = self.studio_check
-    return @name = false if @studio == nil
-    @gen_info = self.gen_info
-end
+  def displayable_movie_titles
+    movie_title_elements = doc.css('td.titleColumn')#magic stuff we just did
+    displayable_movie_titles = []
+    movie_title_elements.each do |x| displayable_movie_titles << x.text end
+    displayable_movie_titles.each do |x| x.strip! end
+  end
 
-def self.lister(stud)
-    curr_list = []
-    doc = Nokogiri::HTML(open("#{PATH}#{PARAMS[stud]}")).css("#mw-content-text li a")
-    doc.each {|x| curr_list << x.text}
-    no_info = doc.map {|x| x.text if x.attr("href").include?("?") == true}
-    no_info.delete(nil)
-    curr_list.reject! {|x| no_info.include? x}
-    return curr_list
+  def displayable_gross_revenue
+    gross_revenue_elements = doc.css('span.secondaryInfo')
+    displayable_gross_revenue = []
+    gross_revenue_elements.each do |x| displayable_gross_revenue << x.text end
+  end
+
+  def displayable_weeks_in_boxoffice
+    weeks_in_boxoffice_elements = doc.css('td.weeksColumn')
+    displayable_weeks_in_boxoffice = []
+    weeks_in_boxoffice_elements.each do |x| displayable_weeks_in_boxoffice << x.text end
+  end
+
 end
