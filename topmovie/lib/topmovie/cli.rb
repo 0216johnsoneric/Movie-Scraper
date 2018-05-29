@@ -22,7 +22,7 @@ class CLI
     puts " "
     @top_movies = TopMovie::Movie.today
     @top_movies.each.with_index(1) do |movie, i|
-      puts "#{i}. '#{movie.name}' - Gross Score #{movie.rt_score}"
+      puts "#{i}. '#{movie.name}' - Gross Score #{movie.gross_score}"
     end
   end
 

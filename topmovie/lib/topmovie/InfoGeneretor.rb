@@ -1,6 +1,7 @@
 class InfoGenerator
   attr_accessor = :names_of_movies, :gross_revenue_of_movies, :weeks_in_boxoffice_of_movies
   @@doc = Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice/"))
+
   def initialize
     @names_of_movies = displayable_movie_titles
     @gross_revenue_of_movies = displayable_gross_revenue
