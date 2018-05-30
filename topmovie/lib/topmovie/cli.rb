@@ -3,13 +3,13 @@ require_relative "../environment"
 
 class CLI
   def call
-    binding.pry
+  
     a = generate_info
     "would you like to see a list of the top movies?"
       if gets.strip == "yes"
         a.name_of_movies
       end
-    names_of_movies
+    
     options
     goodbye
   end
