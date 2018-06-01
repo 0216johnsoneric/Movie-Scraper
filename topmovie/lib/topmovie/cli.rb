@@ -2,16 +2,21 @@ require "pry"
 require_relative "../environment"
 require_relative "greeting"
 
-class TopMovie::CLI
-  include Greeting
+class Cli
+
+  def call
+    menu
+  end
+
+  def hello
+    puts "This application provides the weekly top boxoffice movies from the source https://www.imdb.com/chart/boxoffice/"
+  end
 
   def menu
     hello
-    @movie = TopMovie::List.list_movies
+    @movie = List.list_movies
     input = nil
     while input != "exit"
-      puts " "
-      puts "Type the 'number' of the movie you would like information on. Type 'list' to see the list of top boxoffice movies. Type 'exit' to exit application."
       input = gets.strip.downcase
 
       if input.to_i > 0
@@ -20,13 +25,14 @@ class TopMovie::CLI
         puts "Gross Revenue: #{the_movie_list.gross}"
         puts "Weeks in BoxOffice: #{the_movie_list.weeks}"
       elsif input == 'exit'
-        goodbye
+        puts "Check back for more top movie boxoffice information in the future! Sayonara さよなら!"
       else
         puts " Please select 'exit' or a Movie Number "
       end
     end
   end
 end
+
 
 
   # def list

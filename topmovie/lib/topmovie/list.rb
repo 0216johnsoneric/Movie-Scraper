@@ -1,8 +1,8 @@
-class TopMovie::List
+class List
   @@all = []
 
   def self.movies
-    @@all << TopMovie::Scraper.scrape_imdb
+    @@all << Scraper.scrape_imdb
     @@all
   end
 

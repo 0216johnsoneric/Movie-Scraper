@@ -1,7 +1,7 @@
 require 'pry'
 require "bundler/setup"
 
-class TopMovie::Scraper
+class Scraper
   attr_accessor :name, :gross, :weeks
 
   def self.scrape_imdb
