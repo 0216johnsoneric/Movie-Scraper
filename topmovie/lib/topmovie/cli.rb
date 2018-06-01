@@ -3,30 +3,21 @@ require_relative "../environment"
 
 class CLI
   def call
-  
-    a = generate_info
-    "would you like to see a list of the top movies?"
-      if gets.strip == "yes"
-        a.name_of_movies
-      end
-    
+    list
     options
     goodbye
-  end
-  def generate_info
-    InfoGenerator.new
   end
 
   def list
     puts "This weeks top 3 Movies:"
     puts " "
-    @top_movies = TopMovie::Movie.today
+    @top_movies = TopMovie::Movies.today
     @top_movies.each.with_index(1) do |movie, i|
       puts "#{i}. '#{movie.name}' - Gross Score #{movie.gross_score}"
     end
   end
 
-  def list_options
+  def options
     input = nil
     while input != "exit"
       puts " "
