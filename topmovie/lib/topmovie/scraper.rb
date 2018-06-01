@@ -7,7 +7,7 @@ class Scraper
 
   def self.today
     objects = self.scrape_imdb
-    array = objects.first(3)
+    array = objects.first(5)
     array
   end
 
@@ -32,10 +32,17 @@ class Scraper
     movie_3.gross = @@doc.css('span.secondaryInfo')[2].text.strip
     movie_3.weeks = @@doc.css('td.weeksColumn')[2].text.strip
 
-    [movie_1, movie_2, movie_3]
+    movie_4= self.new
+    movie_4.name = @@doc.css('td.titleColumn')[3].text.strip
+    movie_4.gross = @@doc.css('span.secondaryInfo')[3].text.strip
+    movie_4.weeks = @@doc.css('td.weeksColumn')[3].text.strip
+
+    movie_5= self.new
+    movie_5.name = @@doc.css('td.titleColumn')[4].text.strip
+    movie_5.gross = @@doc.css('span.secondaryInfo')[4].text.strip
+    movie_5.weeks = @@doc.css('td.weeksColumn')[4].text.strip
+
+    [movie_1, movie_2, movie_3, movie_4, movie_5]
 
   end
-
-  
-
 end
