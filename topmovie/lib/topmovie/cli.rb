@@ -24,7 +24,7 @@ class Cli
         puts "Gross Revenue: #{the_movie_list.gross}"
         puts "Weeks in BoxOffice: #{the_movie_list.weeks}"
       elsif input == 'exit'
-        puts "Check back for more top movie boxoffice information in the future! Sayonara さよなら!"
+        puts "Check back for more top movie Box Office movie information in the future! Sayonara さよなら!"
       else
         puts " Please select 'exit' or a Movie Number "
       end
