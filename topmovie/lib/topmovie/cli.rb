@@ -1,6 +1,5 @@
 require "pry"
 require_relative "../environment"
-require_relative "greeting"
 
 class Cli
 
