@@ -1,7 +1,8 @@
-require "pry"
-require_relative "../environment"
+
+
 
 class Cli
+
 
   def call
     menu
@@ -18,7 +19,7 @@ class Cli
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.between?(1, Movie.all.count)
         the_movie_list = @movie[input.to_i-1]
         puts "Movie Name: #{the_movie_list.name}"
         puts "Gross Revenue: #{the_movie_list.gross}"

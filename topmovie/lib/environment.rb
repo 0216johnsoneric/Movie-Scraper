@@ -1,4 +1,4 @@
-require "bundler/setup"
+# require "bundler/setup"
 require "require_all"
 require "pry"
 require "open-uri"

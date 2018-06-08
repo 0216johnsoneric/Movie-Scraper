@@ -1,5 +1,5 @@
-require 'pry'
-require "bundler/setup"
+
+# require "bundler/setup"
 
 class Scraper
   attr_accessor :name, :gross, :weeks
@@ -14,7 +14,12 @@ class Scraper
 
 
   def self.scrape_imdb
-
+    # here is what I'm looking for
+    # @@doc.each
+    #   name = ...
+    #   gross = ...
+    #   weeks = ...
+    #   movie = Movie.new(name, gross, weeks)
     movie_1= self.new
     movie_1.name = @@doc.css('td.titleColumn')[0].text.strip
     movie_1.gross = @@doc.css('span.secondaryInfo')[0].text.strip
