@@ -1,6 +1,3 @@
-
-
-
 class Cli
 
 
@@ -19,7 +16,7 @@ class Cli
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.between?(1, Movie.all.count)
+      if input.to_i > 0
         the_movie_list = @movie[input.to_i-1]
         puts "Movie Name: #{the_movie_list.name}"
         puts "Gross Revenue: #{the_movie_list.gross}"

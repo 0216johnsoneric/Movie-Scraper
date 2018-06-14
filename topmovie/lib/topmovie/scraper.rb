@@ -1,6 +1,3 @@
-
-# require "bundler/setup"
-
 class Scraper
   attr_accessor :name, :gross, :weeks
   @@doc = Nokogiri::HTML(open("https://www.imdb.com/chart/boxoffice/"))
