@@ -11,7 +11,7 @@ class Cli
 
   def menu
     hello
-    @movie = List.list_movies
+    @movie = Movie.list_movies
     input = nil
     while input != "exit"
       input = gets.strip.downcase

@@ -1,17 +1,17 @@
-# change this to Movie
-class List
+class Movie
   @@all = []
-
+  attr_accessor :name, :gross, :weeks
   # Movie class initialize method:
 
-  #def initialize (name, gross, weeks)
-    # @name = name
-    # .....
-    # @@all << self
-  # end
+  def initialize (name, gross, weeks)
+    @name = name
+    @gross = gross
+    @weeks = weeks
+    @@all << self
+  end
 
   def self.movies
-    @@all << Scraper.scrape_imdb
+    # @@all << Scraper.scrape_imdb
     @@all
   end
 

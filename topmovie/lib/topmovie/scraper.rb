@@ -17,6 +17,7 @@ class Scraper
     #   gross = ...
     #   weeks = ...
     #   movie = Movie.new(name, gross, weeks)
+
     movie_1= self.new
     movie_1.name = @@doc.css('td.titleColumn')[0].text.strip
     movie_1.gross = @@doc.css('span.secondaryInfo')[0].text.strip
