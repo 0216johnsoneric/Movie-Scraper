@@ -26,6 +26,33 @@ class Topmovie::Cli
       elsif input == 'exit'
         puts "Check back for more Top Box Office movie information in the future!"
         puts "Sayonara さよなら!"
+        puts "
+        /((((((\\\\
+=======((((((((((\\\\\
+
+     ((           \\\\\\\
+
+     ( (*    _/      \\\\\\\
+
+        \    /  \      \\\\\\________________
+        |  |   |       </                  ((\\\\
+         o_|   /        /                      \ \\\\    \\\\\\\
+
+             |  ._    (                        \ \\\\\\\\\\\\\\\\
+             | /                       /       /    \\\\\\\     \\
+     .______/\/     /                 /       /         \\\
+
+    / __.____/    _/         ________(       /\
+
+   / / / ________/`---------'         \     /  \_
+  / /  \ \                             \   \ \_  \
+
+( <    \ \                             >  /    \ \ \/
+     \\_                           / /       > |
+      \_|                         / /       / /
+                                _//       _//
+                               /_|       /_|
+"
       else
         puts " Please select 'Exit' or select a Movie Number between 1 - 10"
       end
