@@ -1,7 +1,7 @@
-class Cli
+class Topmovie::Cli
 
   def call
-    Scraper.scrape_imdb
+    Topmovie::Scraper.scrape_imdb
     menu
   end
 
@@ -11,7 +11,7 @@ class Cli
 
   def menu
     hello
-    @movie = Movie.list_movies
+    @movie = Topmovie::Movie.list_movies
     input = nil
     while input != "exit"
       input = gets.strip.downcase

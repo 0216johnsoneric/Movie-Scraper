@@ -1,4 +1,4 @@
-class Movie
+class Topmovie::Movie
   @@all = []
   attr_accessor :name, :gross, :weeks
 
@@ -19,7 +19,7 @@ class Movie
     puts ""
     puts "Type the 'Number' of the movie you would like information on or Type 'Exit' to exit the application."
     puts ""
-    movies = Movie.movies
+    movies = Topmovie::Movie.movies
     movies.each.with_index(1) do |movie, i|
     puts "#{i}. Name - #{movie.name}  |||  Gross Revenue - #{movie.gross}  |||  Weeks in Boxoffice - #{movie.weeks}"
 

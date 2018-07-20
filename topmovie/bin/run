@@ -2,4 +2,4 @@
 
 require_relative "../lib/environment"
 
-Cli.new.call
+Topmovie::Cli.new.call
