@@ -24,35 +24,11 @@ class Topmovie::Cli
         puts "Gross Revenue: #{the_movie_list.gross}"
         puts "Weeks in BoxOffice: #{the_movie_list.weeks}"
       elsif input == 'exit'
+        puts ""
         puts "Check back for more Top Box Office movie information in the future!"
         puts "Sayonara さよなら!"
-        puts "
-        /((((((\\\\
-=======((((((((((\\\\\
+        puts ""
 
-     ((           \\\\\\\
-
-     ( (*    _/      \\\\\\\
-
-        \    /  \      \\\\\\________________
-        |  |   |       </                  ((\\\\
-         o_|   /        /                      \ \\\\    \\\\\\\
-
-             |  ._    (                        \ \\\\\\\\\\\\\\\\
-             | /                       /       /    \\\\\\\     \\
-     .______/\/     /                 /       /         \\\
-
-    / __.____/    _/         ________(       /\
-
-   / / / ________/`---------'         \     /  \_
-  / /  \ \                             \   \ \_  \
-
-( <    \ \                             >  /    \ \ \/
-     \\_                           / /       > |
-      \_|                         / /       / /
-                                _//       _//
-                               /_|       /_|
-"
       else
         puts " Please select 'Exit' or select a Movie Number between 1 - 10"
       end
