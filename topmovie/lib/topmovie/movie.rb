@@ -10,19 +10,9 @@ class Topmovie::Movie
   end
 
 
-  def self.movies
+  def self.all
     @@all
   end
 
-  def self.list_movies
-    puts "This weeks Top Box Office Movies:"
-    puts ""
-    puts "Type the 'Number' of the movie you would like information on or Type 'Exit' to exit the application."
-    puts ""
-    movies = Topmovie::Movie.movies
-    movies.each.with_index(1) do |movie, i|
-    puts "#{i}. Name - #{movie.name}  |||  Gross Revenue - #{movie.gross}  |||  Weeks in Boxoffice - #{movie.weeks}"
-
-    end
-  end
+  
 end
